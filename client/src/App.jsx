@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
 // import './App.css'
-import Sidenav from './components/Sidenav'
-import Main from './components/Main'
-import Work from './components/Work'
+import Sidenav from './components/Sidenav';
+import Main from './components/Main';
+import Work from './components/Work';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
 
@@ -11,6 +13,8 @@ function App() {
       <Sidenav />
       <Main />
       <Work />
+      <Projects />
+      <Contact />
     </div>
   )
 }
