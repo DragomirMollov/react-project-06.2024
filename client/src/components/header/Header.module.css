@@ -1,0 +1,49 @@
+.headerContainer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.circleNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; /* space between the circles */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 50px; /* make the container slightly rounded */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navLink:hover {
+    transform: scale(1.1);
+}
+
+.authLinks {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* space between the auth links */
+}
+
+.home {
+    /* Additional styles for the home link if needed */
+}
