@@ -1,8 +1,8 @@
 
-import propertyImg from '../assets/property.jpeg';
-import cryptoImg from '../assets/crypto.jpeg';
-import netflixImg from '../assets/netflix.jpeg';
-import twitchImg from '../assets/twitch.jpeg';
+import propertyImg from '../../assets/property.jpeg';
+import cryptoImg from '../../assets/crypto.jpeg';
+import netflixImg from '../../assets/netflix.jpeg';
+import twitchImg from '../../assets/twitch.jpeg';
 import ProjectItem from './ProjectItem';
 
 
