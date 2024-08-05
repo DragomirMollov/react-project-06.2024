@@ -1,5 +1,7 @@
-import { useState } from 'react';
-// import './App.css'
+import { Routes, Route } from "react-router-dom";
+
+import { AuthContextProvider } from "./contexts/AuthContext";
+
 import Sidenav from './components/Sidenav';
 import Main from './components/Main';
 import Work from './components/Work';
@@ -9,13 +11,19 @@ import Contact from './components/Contact';
 function App() {
 
   return (
-    <div>
-      <Sidenav />
-      <Main />
-      <Work />
-      <Projects />
-      <Contact />
-    </div>
+    <AuthContextProvider>
+      <div>
+        <main>
+          <Routes>
+            <Route path="/" element={<Sidenav />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+    </AuthContextProvider>
   )
 }
 
