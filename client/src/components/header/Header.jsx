@@ -10,7 +10,7 @@ export default function Header() {
             <Background />
             <header className={styles.circleNav}>
                 <Link className={`${styles.navLink} ${styles.home}`} to="/">Home</Link>
-                <Link className={styles.navLink} to="/projects">All projects</Link>
+                {/* <Link className={styles.navLink} to="/projects">All projects</Link> */}
                 {isAuthenticated ? (
                     <div id="user" className={styles.authLinks}>
                         <Link className={styles.navLink} to="/work">Work</Link>
