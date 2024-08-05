@@ -1,7 +1,7 @@
 /* eslint-disable antfu/top-level-function */
 /* eslint-disable style/indent */
-import { login, logout, register } from '../Link pi/Link uth-api';
-import { useAuthContext } from '../contexts/Link uthContext';
+import { login, logout, register } from '../api/auth-api';
+import { useAuthContext } from '../contexts/AuthContext.jsx';
 
 export const useLogin = () => {
     const { changeAuthState } = useAuthContext();

@@ -1,5 +1,3 @@
-/* eslint-disable antfu/top-level-function */
-/* eslint-disable style/indent */
 import requester from './requester';
 
 const BASE_URL = 'http://localhost:3030/users';

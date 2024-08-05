@@ -1,6 +1,6 @@
 /* eslint-disable style/brace-style */
 
-import { getAccessToken } from '../utils/Link uthUtils';
+import { getAccessToken } from '../utils/authUtils';
 
 /* eslint-disable style/indent */
 async function requester(method, url, data) {

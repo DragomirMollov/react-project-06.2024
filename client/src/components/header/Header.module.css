@@ -1,36 +1,23 @@
+/* Header.module.css */
 .headerContainer {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative; /* Position relative to manage z-index stacking */
+    z-index: 10; /* Ensure header is above background */
 }
 
 .circleNav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px; /* space between the circles */
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 50px; /* make the container slightly rounded */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 20px;
+    z-index: 20; /* Ensure navigation is above background */
 }
 
 .navLink {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    margin: 0 5px;
+    padding: 10px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -40,10 +27,5 @@
 
 .authLinks {
     display: flex;
-    flex-direction: row;
-    gap: 10px; /* space between the auth links */
-}
-
-.home {
-    /* Additional styles for the home link if needed */
+    gap: 10px;
 }
