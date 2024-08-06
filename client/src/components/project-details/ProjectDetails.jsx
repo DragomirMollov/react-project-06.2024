@@ -5,6 +5,8 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { useCreateComment, useGetAllComents } from "../../hooks/useComments";
 import { useState } from "react";
 
+import style from './ProjectDetails.module.css';
+
 const initialValues = {
     comment: '',
 };
@@ -24,8 +26,6 @@ export default function Projectetails() {
     } = useForm(initialValues, async ({ comment }) => {
         try {
             const newComment = await createComment(projectId, comment);
-
-            // setComments(oldComments => [...oldComments, newComment]);
             dispatch({ type: 'ADD_COMMENT', payload: { ...newComment, author: { email } } });
         } catch (error) {
             setError(error.message);
@@ -34,51 +34,43 @@ export default function Projectetails() {
 
     const isOwner = userId === project._ownerId;
     console.log(userId);
-    
-    
-    
 
     return (
         <section>
             <h1>Project Details</h1>
-            <div className="info-section">
-
-                <div className="eader">
+            <div className={style.section}>
+                <div className={style.header}>
                     <h1>{project.title}</h1>
-                    <span className="years">Years: {project.years}</span>
+                    <span className={style.years}>Years: {project.years}</span>
                 </div>
 
-                <p className="text">{project.details}</p>
+                <p className={style.text}>{project.details}</p>
 
-                {/* <!-- Bonus ( for Guests and Users ) --> */}
-                <div className="details-comments">
+                <div className={style.detailsComments}>
                     <h2>Comments:</h2>
                     <ul>
                         {comments.map(comment => (
-                            <li key={comment._id} className="comment">
+                            <li key={comment._id} className={style.comment}>
                                 <p>{comment.author.email}: {comment.text}</p>
                             </li>
-                        ))
-                        }
+                        ))}
                     </ul>
 
-                    {comments.length === 0 && <p className="no-comment">No comments.</p>}
+                    {comments.length === 0 && <p className={style.noComment}>No comments.</p>}
                 </div>
 
                 {isOwner && (
-                    <div className="buttons">
-                        <a href="#" className="button">Edit</a>
-                        <a href="#" className="button">Delete</a>
+                    <div className={style.buttons}>
+                        <a href="#" className={style.button}>Edit</a>
+                        <a href="#" className={style.button}>Delete</a>
                     </div>
                 )}
             </div>
 
-            {/* <!-- Bonus -->
-            <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
             {isAuthenticated && (
-                <article className="create-comment">
+                <article className={style.createComment}>
                     <label>Add new comment:</label>
-                    <form className="form" onSubmit={submitHandler}>
+                    <form className={style.form} onSubmit={submitHandler}>
                         <textarea
                             name="comment"
                             placeholder="Comment......"
@@ -86,12 +78,10 @@ export default function Projectetails() {
                             value={values.comment}
                         ></textarea>
 
-                        <input className="btn submit" type="submit" value="Add Comment" />
+                        <input className={`${style.btn} ${style.submit}`} type="submit" value="Add Comment" />
                     </form>
                 </article>
             )}
-
-
         </section>
     );
 };
