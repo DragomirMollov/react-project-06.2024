@@ -1,3 +1,16 @@
+.content {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    position: relative;
+    z-index: 20;
+}
+
+
 .section {
     background-color: #ffffff;
     padding: 20px;
@@ -14,11 +27,15 @@
     border-bottom: 1px solid #eaeaea;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    z-index: 20;
+
 }
 
 .header h1 {
     font-size: 24px;
     color: #333;
+    z-index: 20;
+
 }
 
 .years {
