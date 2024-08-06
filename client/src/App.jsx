@@ -23,6 +23,8 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            {/* <Route path="/projects/:projectId/details" element={<ProjectDetails />} />
+            <Route path="/projects/create" element={<ProjectCreate />} /> */}
           </Routes>
         </main>
       </div>
