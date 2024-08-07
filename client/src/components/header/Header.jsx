@@ -7,7 +7,7 @@ export default function Header() {
     const { isAuthenticated } = useAuthContext();
     return (
         <div className={styles.headerContainer}>
-            <Background />
+            {/* <Background /> */}
             <header className={styles.circleNav}>
                 <Link className={`${styles.navLink} ${styles.home}`} to="/">Home</Link>
                 {/* <Link className={styles.navLink} to="/projects">All projects</Link> */}

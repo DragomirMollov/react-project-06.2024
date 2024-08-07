@@ -1,9 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useGetOneProjects } from "../../hooks/useProjects";
 import { useForm } from "../../hooks/useForm";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useCreateComment, useGetAllComents } from "../../hooks/useComments";
 import { useState } from "react";
+import { deleteOne } from "../../api/projects-api";
+import ProjectDelete from '../project-delete/ProjectDelete';
+import { Link } from 'react-router-dom';
 
 import style from './ProjectDetails.module.css';
 
@@ -11,11 +14,13 @@ const initialValues = {
     comment: '',
 };
 
-export default function Projectetails() {
+export default function ProjectDetails() {
+    const navigate = useNavigate();
     const [error, setError] = useState('');
     const { projectId } = useParams();
     const [comments, dispatch] = useGetAllComents(projectId);
     const createComment = useCreateComment();
+    const [showProjectDeleteById, setShowProjectDeleteById] = useState(null);
     const { email, userId } = useAuthContext();
     const [project] = useGetOneProjects(projectId);
     const { isAuthenticated } = useAuthContext();
@@ -33,7 +38,11 @@ export default function Projectetails() {
     });
 
     const isOwner = userId === project._ownerId;
-    console.log(userId);
+
+    const projectDeleteHandler = async (projectId) => {
+        await deleteOne(projectId);
+        navigate("/projects");
+    }
 
     return (
         <div className={style.content}>
@@ -62,10 +71,17 @@ export default function Projectetails() {
 
                     {isOwner && (
                         <div className={style.buttons}>
-                            <a href="#" className={style.button}>Edit</a>
-                            <a href="#" className={style.button}>Delete</a>
+                            <Link to={`/projects/${project._id}/edit`} className={style.button}>Edit</Link>
+                            <a href="#" onClick={() => setShowProjectDeleteById(project._id)} className={style.button}>Delete</a>
                         </div>
                     )}
+
+{
+                    showProjectDeleteById && (<ProjectDelete
+                        onClose={() => setShowProjectDeleteById(null)}
+                        onProjectDelete={() => projectDeleteHandler(showProjectDeleteById)}
+                    />)
+                }
                 </div>
 
                 {isAuthenticated && (

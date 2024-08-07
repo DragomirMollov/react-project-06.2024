@@ -39,3 +39,9 @@ export function useCreateProject() {
 
     return projectCreateHandler;
 };
+
+export function useEditProjects() {
+    const editProjectHandler = (projectData, projectId) => projectsAPI.update(projectData, projectId);
+
+    return editProjectHandler;
+};

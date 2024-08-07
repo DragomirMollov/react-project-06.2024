@@ -8,7 +8,8 @@ import Header from './components/header/Header';
 import Register from './components/register/Register';
 import Login from './components/login/Login';
 import Logout from './components/logout/Logout';
-import Projectetails from './components/project-details/ProjectDetails';
+import ProjectDetails from './components/project-details/ProjectDetails';
+import ProjectCreate from './components/project-create/ProjectCreate';
 
 function App() {
   return (
@@ -24,8 +25,8 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/projects/:projectId/details" element={<Projectetails />} />
-            {/* <Route path="/projects/create" element={<ProjectCreate />} /> */}
+            <Route path="/projects/:projectId/details" element={<ProjectDetails />} />
+            <Route path="/projects/create" element={<ProjectCreate />} />
           </Routes>
         </main>
       </div>

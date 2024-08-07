@@ -1,0 +1,18 @@
+{
+    "333451f7-9830-4046-84fe-59cf0a6e28ea": {
+        "gameId": "dbc76b6e-f3cf-4006-a8a5-4a632a1634f9",
+        "text": "Lorem ipsum",
+        "author": {
+            "email": "admin2@abv.bg"
+        },
+        "_id": "333451f7-9830-4046-84fe-59cf0a6e28ea"
+    },
+    "26ec60c6-95f3-4e14-bf11-ebb338dadecc": {
+        "gameId": "bc9c208e-93a8-4e39-93d0-305870028a61",
+        "text": "Lorem ipsum 2 ",
+        "author": {
+            "email": "admin@abv.bg"
+        },
+        "_id": "26ec60c6-95f3-4e14-bf11-ebb338dadecc"
+    }
+}
