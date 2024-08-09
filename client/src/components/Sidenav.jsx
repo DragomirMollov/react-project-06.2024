@@ -50,13 +50,13 @@ export default function Sidenav() {
                     {/* <Link to="main" className='rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
                             <AiOutlineHome size={20} />
                         </Link> */}
+                    <Link to="projects" className='rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
+                        <AiOutlineProject size={20} />
+                    </Link>
                     {isAuthenticated ? 
                     (<Link to="work" className='rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
                         <GrProjects size={20} />
                     </Link>):('')}
-                    <Link to="projects" className='rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
-                        <AiOutlineProject size={20} />
-                    </Link>
                     {isAuthenticated ?
                         (<Link to="projects/create" className='rounded-full z-20 shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
                             <BsPerson size={20} />
