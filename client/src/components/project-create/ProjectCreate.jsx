@@ -35,8 +35,8 @@ export default function ProjectCreate() {
     } = useForm(initialValues, createHandler);
 
     return (
-        <section id="create" className="auth">
-            <form id="create-content" onSubmit={submitHandler}>
+        <section className={styles.create}>
+            <form className={styles.content} onSubmit={submitHandler}>
                 <div className="container">
 
                     <h1>Create project</h1>
@@ -50,7 +50,7 @@ export default function ProjectCreate() {
                         placeholder="Enter project title..."
                     />
 
-                    <label htmlFor="duration">Duration:</label>
+                    <label htmlFor="duration">Years Duration:</label>
                     <input
                         type="text"
                         id="duration"
