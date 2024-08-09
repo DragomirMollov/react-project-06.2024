@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './contexts/AuthContext';
+
 import Sidenav from './components/Sidenav';
-import Work from './components/Work';
 import Projects from './components/projects/Projects';
 import Contact from './components/Contact';
 import Header from './components/header/Header';
@@ -11,6 +11,7 @@ import Logout from './components/logout/Logout';
 import ProjectDetails from './components/project-details/ProjectDetails';
 import ProjectCreate from './components/project-create/ProjectCreate';
 import ProjectEdit from './components/project-edit/ProjectEdit';
+import Work from './components/work/Work';
 
 function App() {
   return (

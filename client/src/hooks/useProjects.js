@@ -3,16 +3,17 @@ import { useEffect, useState } from 'react';
 import projectsAPI from '../api/projects-api';
 
 /* eslint-disable style/indent */
-export function useGetAllProjects() {
+export function useGetAllProjects(userId = null) {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
         (async () => {
-            const result = await projectsAPI.getAll();
+            // Pass the userId to the API call if provided
+            const result = await projectsAPI.getAll(userId);
 
             setProjects(result);
         })();
-    }, []);
+    }, [userId]); // Add userId as a dependency to re-fetch if it changes
 
     return [projects, setProjects];
 };

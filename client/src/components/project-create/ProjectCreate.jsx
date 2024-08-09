@@ -7,6 +7,7 @@ import styles from './ProjectCreate.module.css';
 const initialValues = {
     title: '',
     years: '',
+    duration: '',
     details: '',
 };
 
@@ -49,15 +50,24 @@ export default function ProjectCreate() {
                         placeholder="Enter project title..."
                     />
 
-                    <label htmlFor="years">Years:</label>
+                    <label htmlFor="duration">Duration:</label>
                     <input
-                        type="number"
+                        type="text"
+                        id="duration"
+                        name="duration"
+                        value={values.duration}
+                        onChange={changeHandler}
+                        placeholder="Durration period"
+                    />
+
+                    <label htmlFor="years">Year:</label>
+                    <input
+                        type="text"
                         id="years"
                         name="years"
                         value={values.years}
                         onChange={changeHandler}
-                        min="1"
-                        placeholder="1"
+                        placeholder="When the project start"
                     />
 
                     <label htmlFor="details">Details:</label>

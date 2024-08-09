@@ -5,9 +5,17 @@ import * as request from './requester';
 
 const BASE_URL = 'http://localhost:3030/data/projects';
 
-export const getAll = async () => {
-    const result = await request.get(BASE_URL);
+export const getAll = async (userId = null) => {
+    let url = BASE_URL;
 
+    if (userId) {
+        const params = new URLSearchParams({
+            where: `_ownerId="${userId}"`,
+        });
+        url += `?${params.toString()}`;
+    }
+
+    const result = await request.get(url);
     const projects = Object.values(result);
 
     return projects;
