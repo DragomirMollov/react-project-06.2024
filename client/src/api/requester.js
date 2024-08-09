@@ -8,20 +8,12 @@ async function requester(method, url, data) {
 
     const accessToken = getAccessToken();
 
-    // console.log('Access Token:', accessToken); // Debugging line
-
     if (accessToken) {
         options.headers = {
             ...options.headers,
             'X-Authorization': accessToken,
         };
     }
-    // } else {
-    //     // Handle the case when accessToken is not available
-    //     console.warn('No access token found, redirecting to login.');
-    //     window.location.href = '/login'; // Example redirection
-    //     return;
-    // };
 
     if (method !== 'GET') {
         options.method = method;
@@ -58,11 +50,6 @@ export const get = requester.bind(null, 'GET');
 export const post = requester.bind(null, 'POST');
 export const put = requester.bind(null, 'PUT');
 export const del = requester.bind(null, 'DELETE');
-
-// export const get = (url, data) => requester('GET', url, data);
-// export const post = (url, data) => requester('POST', url, data);
-// export const put = (url, data) => requester('PUT', url, data);
-// export const del = (url, data) => requester('DELETE', url, data);
 
 export default {
     get,

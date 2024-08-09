@@ -10,6 +10,7 @@ import Login from './components/login/Login';
 import Logout from './components/logout/Logout';
 import ProjectDetails from './components/project-details/ProjectDetails';
 import ProjectCreate from './components/project-create/ProjectCreate';
+import ProjectEdit from './components/project-edit/ProjectEdit';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects/:projectId/details" element={<ProjectDetails />} />
             <Route path="/projects/create" element={<ProjectCreate />} />
+            <Route path="/projects/:projectId/edit" element={<ProjectEdit />} />
           </Routes>
         </main>
       </div>

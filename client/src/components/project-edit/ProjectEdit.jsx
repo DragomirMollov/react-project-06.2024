@@ -25,7 +25,7 @@ export default function ProjectEdit() {
         values,
         changeHandler,
         submitHandler,
-    } = useForm(project, editHandler);
+    } = useForm(project, editHandler, true);
 
     return (
         <section id="edit-page" className="auth">

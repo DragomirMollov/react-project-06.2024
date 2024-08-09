@@ -1,8 +1,14 @@
 /* eslint-disable style/indent */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export function useForm(initialValues, submitCallback) {
+export function useForm(initialValues, submitCallback, refreshInitialValues = false) {
     const [values, setValues] = useState(initialValues);
+
+    if (refreshInitialValues) {
+        useEffect(() => {
+            setValues(initialValues || {});
+        }, [initialValues]);
+    };
 
     const changeHandler = (e) => {
         setValues(state => ({
