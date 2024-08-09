@@ -8,6 +8,7 @@
     text-align: center;
     background: #3e4443;
     box-shadow: 0px 0px 32px 0px #32485e, -14px -14px 20px #191c21;
+    z-index: 20;
 }
 
 input[type="text"] {
