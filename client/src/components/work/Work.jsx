@@ -53,26 +53,31 @@
 import WorkItem from "./WorkItem";
 import { useGetAllProjects } from '../../hooks/useProjects';
 import { useAuthContext } from '../../contexts/AuthContext';
+import styles from './Work.module.css';
 
 export default function Work() {
     const { userId } = useAuthContext(); // Get the logged-in user's ID
     const [projects] = useGetAllProjects(userId); // Pass the userId to the hook
 
     return (
-        <div id="work" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16">
-            <h1 className="text-4xl font-bold text-center text-[#001b5e]">My Work</h1>
-            {projects.length > 0
-                ? projects.map((item, id) => (
-                    <WorkItem 
-                        key={id} 
-                        year={item.year} 
-                        title={item.title} 
-                        duration={item.duration} 
-                        details={item.details} 
-                    />
-                ))
-                : <h3 className="no-articles">No work experiences yet</h3>
-            }
+        <div className={styles.work}>
+            <div className={styles.content}>
+                <h1 className="text-4xl font-bold text-center text-[#001b5e]">My Work</h1>
+                <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 ${styles.gridContainer}`}>
+                {projects.length > 0
+                    ? projects.map((item, id) => (
+                        <WorkItem
+                            key={id}
+                            year={item.year}
+                            title={item.title}
+                            duration={item.duration}
+                            details={item.details}
+                        />
+                    ))
+                    : <h3 className="no-articles">No work experiences yet</h3>
+                }
+                </div>
+            </div>
         </div>
     );
 }
