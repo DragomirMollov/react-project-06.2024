@@ -46,12 +46,11 @@ export default function ProjectEdit() {
 
                     <label htmlFor="years">Years:</label>
                     <input
-                        type="number"
+                        type="text"
                         id="years"
                         name="years"
                         value={values.years}
                         onChange={changeHandler}
-                        min="1"
                         placeholder="1"
                     />
 
