@@ -10,13 +10,10 @@
 
 .content {
     background: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 1200px;
-    text-align: center;
+    padding: 100px 20px;
     position: relative;
-    z-index: 20;
+    height: 100%;
+    margin-top: 40px;
+    z-index: 1000;
 }
 

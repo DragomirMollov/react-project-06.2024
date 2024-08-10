@@ -17,7 +17,7 @@ export default function ProjectDelete({ onProjectDelete, onClose }) {
                     </header>
                     <div className="actions">
                         <div id="form-actions">
-                            <button id="action-save" className="btn button" onClick={onProjectDelete} type="button">Delete</button>
+                            <button id="action-save" style={{ 'margin-right': '5px'}} className="btn button" onClick={onProjectDelete} type="button">Delete</button>
                             <button id="action-cancel" onClick={onClose} className="btn button" type="button">
                                 Cancel
                             </button>
