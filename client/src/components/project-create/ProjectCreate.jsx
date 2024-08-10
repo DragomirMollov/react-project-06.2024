@@ -39,7 +39,7 @@ export default function ProjectCreate() {
             <form className={styles.content} onSubmit={submitHandler}>
                 <div className="container">
 
-                    <h1>Create project</h1>
+                <h1 className={styles.title}>Create project</h1>
                     <label htmlFor="title">Title:</label>
                     <input
                         type="text"
@@ -77,7 +77,7 @@ export default function ProjectCreate() {
                         onChange={changeHandler}
                         id="details"
                     ></textarea>
-                    <input className="btn submit" type="submit" value="Create project" />
+                    <input className={styles.btnSubmit} type="submit" value="Create project" />
                 </div>
             </form>
         </section>

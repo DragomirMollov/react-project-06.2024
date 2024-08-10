@@ -33,7 +33,7 @@ export default function ProjectEdit() {
         <section className={styles.content}>
             <form  onSubmit={submitHandler}>
                 <div className="container">
-                    <h1>Edit project</h1>
+                    <h1 className={styles.title}>Edit project</h1>
                     <label htmlFor="title">Title:</label>
                     <input
                         type="text"
@@ -62,7 +62,7 @@ export default function ProjectEdit() {
                         onChange={changeHandler}
                         id="details"
                     ></textarea>
-                    <input className="btn submit" type="submit" value="Edit project" />
+                    <input className={styles.btnSubmit} type="submit" value="Edit project" />
                 </div>
             </form>
         </section>
