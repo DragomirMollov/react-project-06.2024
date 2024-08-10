@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useEditProjects, useGetOneProjects } from "../../hooks/useProjects";
+import styles from './ProjectEdit.module.css';
 
 export default function ProjectEdit() {
     const { projectId } = useParams();
@@ -28,8 +29,9 @@ export default function ProjectEdit() {
     } = useForm(project, editHandler, true);
 
     return (
-        <section id="edit-page" className="auth">
-            <form id="edit" onSubmit={submitHandler}>
+        <div className={styles.container}>
+        <section className={styles.content}>
+            <form  onSubmit={submitHandler}>
                 <div className="container">
                     <h1>Edit project</h1>
                     <label htmlFor="title">Title:</label>
@@ -64,5 +66,6 @@ export default function ProjectEdit() {
                 </div>
             </form>
         </section>
+        </div>
     );
 }; 
